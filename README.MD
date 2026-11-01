@@ -1,72 +1,74 @@
-# Scrapert Game - Sistema Web Educativo Interactivo
+# Scrapert Game
 
-Plataforma web diseñada para el desarrollo cognitivo, la discriminación visoespacial y el refuerzo lógico-matemático en etapas formativas, segmentada en dos niveles pedagógicos: Pre-Primaria (4 a 6 años) y Primaria (7 a 12 años). El sistema integra control reactivo de interfaces, persistencia asíncrona de métricas de desempeño, evaluación basada en gamificación y una consola docente de auditoría protegida mediante control de acceso numérico.
+Aplicación web educativa e interactiva diseñada para la resolución de desafíos mediante actividades didácticas. Desarrollada con una arquitectura cliente-servidor moderna.
 
----
+## Tecnologías y Arquitectura en la Nube (Cloud)
 
-## 1. Arquitectura y Tecnologías
+El proyecto ha sido desplegado exitosamente en internet utilizando infraestructura gratuita de grado profesional para garantizar su disponibilidad:
 
-### Frontend
-- **Framework:** React 18
-- **Herramienta de compilación:** Vite
-- **Iconografía:** Lucide React
-- **Estilos:** CSS3 modular con variables de diseño personalizadas y diseño adaptativo
-
-### Backend
-- **Entorno de ejecución:** Node.js
-- **Framework HTTP:** Express
-- **Middleware:** CORS (intercambio de recursos de origen cruzado), Dotenv (gestión de variables de entorno)
-- **Protocolo:** API RESTful desacoplada con respuestas estructuradas en formato JSON
-
-### Persistencia y Base de Datos
-- **Motor:** MySQL / MariaDB
-- **Controlador:** `mysql2/promise` implementando un pool de conexiones optimizado para transacciones asíncronas concurrentes
+* **Frontend (Interfaz de Usuario):** Desarrollado con **React + Vite**. Desplegado y alojado en **Vercel**.
+* **Backend (Servidor/API):** Construido con **Node.js y Express**. Desplegado y alojado en **Render** con soporte SSL.
+* **Base de Datos:** Estructurada en **MySQL**. Alojada de forma remota y segura en **Aiven**.
 
 ---
 
-## 2. Catálogo de Módulos y Actividades
+## Enlaces de Producción (Evaluación en Vivo)
 
-### Nivel Pre-Primaria
-- **La Gran Aventura Espacial:** Evaluación de discriminación posicional y orientación espacial relativa (nociones de adentro y afuera).
-- **El Taller de Figuras:** Identificación visual y velocidad de reacción ante patrones y formas geométricas bidimensionales.
-- **Memoria de Patitas:** Ejercicio de correspondencia visomotora y memoria de trabajo a corto plazo mediante emparejamiento de tarjetas.
-- **El Gran Desafío de Scrapert:** Evaluación integral desbloqueable sujeta a la culminación previa de las tres actividades base del nivel.
+El proyecto se encuentra 100% funcional en la nube. Puede ser evaluado directamente desde cualquier navegador web sin necesidad de configuración local a través del siguiente enlace:
 
-### Nivel Primaria
-- **Desafío de Multiplicación:** Automatización y agilidad de cálculo mental en tablas de multiplicar del 1 al 10 bajo control de tiempo.
-- **Suma de Quebrados:** Resolución de adición de fracciones homogéneas y heterogéneas asistida por representaciones visuales proporcionales.
-- **La Tiendita Decimal:** Multiplicación con cantidades decimales orientada a problemas de cálculo comercial cotidiano.
-- **La Tele Mágica de Colores:** Evaluación de atención selectiva y control inhibitorio mediante el paradigma neurocognitivo del Efecto Stroop con distractores gráficos cruzados.
+* **Aplicación Web (Juego en vivo):** https://scrapert-game-web.vercel.app
+* **API del Servidor (Backend):** https://scrapert-game-web.onrender.com
 
 ---
 
-## 3. Módulos Institucionales y de Control
+## Instrucciones para Ejecución Local
 
-### Cuadro de Honor (Starboard)
-- Visualización jerárquica de puntuaciones acumuladas a nivel global.
-- Estructuración de podio para las tres mejores calificaciones y tabla general ordenada de rendimientos.
+Si el evaluador requiere analizar y ejecutar el código fuente en un entorno local (localhost), debe seguir estrictamente los siguientes pasos.
 
-### Módulo de Supervisión Docente (Parental Gate)
-- Control de acceso de cuatro dígitos diseñado para prevenir la alteración o salida no autorizada del entorno lúdico.
-- **Código PIN predeterminado:** `1234`
-- Indicadores Clave de Desempeño (KPIs): partidas totales registradas, tasa porcentual de precisión colectiva y puntos globales emitidos.
-- Filtro interactivo por alumno con auditoría de actividades, aciertos, errores y duración exacta en segundos.
+### Requisitos Previos
+* Node.js instalado (versión 16 o superior).
+* Gestor de base de datos MySQL local (ej. XAMPP, WAMP, MySQL Workbench).
 
----
+### 1. Configuración de la Base de Datos
+1. Inicie su servidor MySQL local.
+2. Ejecute el script SQL proporcionado en la raíz del proyecto (`bd_scrapert_game.sql`) en su gestor de bases de datos. Esto creará automáticamente la base de datos, la estructura de tablas y los registros requeridos para el funcionamiento del juego.
 
-## 4. Requisitos del Sistema
+### 2. Configuración del Backend (Servidor)
+1. Abra una terminal y navegue hacia el directorio del servidor:
+   ```bash
+   cd servidor
+   ```
+2. Instale las dependencias requeridas:
+   ```bash
+   npm install
+   ```
+3. Verifique que las variables de entorno en el archivo `.env` apunten a su configuración local (usualmente puerto 3306 y usuario root sin contraseña en XAMPP):
+   ```env
+   BD_HOST=localhost
+   BD_USUARIO=root
+   BD_CLAVE=
+   BD_NOMBRE=bd_scrapert_game
+   BD_PUERTO=3306
+   ORIGEN_PERMITIDO=http://localhost:5173
+   PORT=4000
+   ```
+4. Inicie el servidor:
+   ```bash
+   npm start
+   ```
+   El servicio confirmará la conexión a la base de datos y estará escuchando en el puerto 4000.
 
-- **Node.js:** Versión 18.0.0 o superior
-- **Gestor de paquetes:** npm (incluido con Node.js)
-- **Servidor de base de datos:** MySQL 5.7+ o MariaDB 10.4+ (ejecutable mediante entornos locales como XAMPP)
-
----
-
-## 5. Instalación y Puesta en Marcha
-
-### Paso 1: Configuración de la Base de Datos
-1. Iniciar los servicios de Apache y MySQL en el panel de control correspondiente.
-2. Acceder al gestor de bases de datos (por ejemplo, phpMyAdmin en `http://localhost/phpmyadmin`).
-3. Crear una nueva base de datos denominada exactamente:
-   ```text
-   bd_scrapert_game
+### 3. Configuración del Frontend (Cliente)
+1. Abra una nueva terminal y navegue hacia el directorio del cliente:
+   ```bash
+   cd cliente
+   ```
+2. Instale las dependencias de la interfaz:
+   ```bash
+   npm install
+   ```
+3. Inicie el servidor de desarrollo de Vite:
+   ```bash
+   npm run dev
+   ```
+4. Acceda a la aplicación en su navegador web a través de la dirección generada, típicamente `http://localhost:5173`.
