@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap');
+
+/* ========================================================
+   VARIABLES GLOBALES - PALETA EXACTA Y TIPOGRAFÍA NUNITO
+   ======================================================== */
+:root {
+  /* Tipografía Nunito */
+  --fuente-principal: 'Nunito', sans-serif;
+  --peso-semi-negrita: 600;
+  --peso-extra-negrita: 800;
+  --peso-negrita-total: 900;
+
+  /* Paleta cromática oficial */
+  --color-amatista: #9956DE;
+  --color-amatista-sombra: #7E3DBE;
+
+  --color-azul-pizarra: #7274ED;
+  --color-azul-pizarra-sombra: #585ACD;
+
+  --color-cielo-verano: #1FA7E1;
+  --color-cielo-verano-sombra: #1583B3;
+
+  --color-turquesa-suave: #6ED1CF;
+  --color-turquesa-suave-sombra: #4FB3B1;
+
+  --color-verde-pastel: #75D06A;
+  --color-verde-pastel-sombra: #58AC4E;
+
+  --color-rosa-texas: #FFB356;
+  --color-rosa-texas-sombra: #DB9035;
+
+  --color-mona-lisa: #FF8B8B;
+  --color-mona-lisa-sombra: #DF6969;
+
+  --color-ilusion: #FB96BB;
+  --color-ilusion-sombra: #D8759B;
+
+  /* Colores de fondo y neutros */
+  --fondo-aplicacion: #F5FAFD;
+  --fondo-tarjeta: #FFFFFF;
+  --color-texto-oscuro: #2D3748;
+  --color-texto-suave: #718096;
+  --borde-suave: #EDF2F7;
+}
+
+/* ========================================================
+   REINICIO Y CONFIGURACIÓN BASE
+   ======================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--fuente-principal);
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: var(--fondo-aplicacion);
+  color: var(--color-texto-oscuro);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================================================
+   CARTELES DE CABECERA (ESTILO BANNER CON BORDE Y RELIEVE)
+   ======================================================== */
+.cartel-cabecera {
+  background: var(--fondo-tarjeta);
+  border: 3.5px solid var(--color-turquesa-suave);
+  box-shadow: 0 6px 0 var(--color-turquesa-suave-sombra);
+  border-radius: 20px;
+  padding: 14px 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-weight: var(--peso-negrita-total);
+  color: var(--color-cielo-verano);
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+/* ========================================================
+   TARJETAS Y PANELES BLANCOS LIMPIOS
+   ======================================================== */
+.tarjeta-juego {
+  background: var(--fondo-tarjeta);
+  border-radius: 26px;
+  padding: 2.2rem;
+  box-shadow: 0 10px 25px rgba(110, 209, 207, 0.12);
+  border: 2px solid #EBF4F6;
+}
+
+.tarjeta-dialogo {
+  background: var(--fondo-tarjeta);
+  border-radius: 22px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  border: 1.5px solid #F0F4F8;
+  position: relative;
+}
+
+/* ========================================================
+   BOTONES CON EFECTO DE PULSACIÓN TÁCTIL 3D
+   ======================================================== */
+.boton-juguete {
+  border: none;
+  cursor: pointer;
+  font-family: var(--fuente-principal);
+  font-weight: var(--peso-extra-negrita);
+  font-size: 1.15rem;
+  padding: 12px 24px;
+  border-radius: 18px;
+  color: #FFFFFF;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.boton-juguete:active {
+  transform: translateY(4px);
+}
+
+/* Variantes de color según la paleta */
+.boton-verde {
+  background-color: var(--color-verde-pastel);
+  box-shadow: 0 5px 0 var(--color-verde-pastel-sombra);
+}
+.boton-verde:active {
+  box-shadow: 0 1px 0 var(--color-verde-pastel-sombra);
+}
+
+.boton-coral {
+  background-color: var(--color-mona-lisa);
+  box-shadow: 0 5px 0 var(--color-mona-lisa-sombra);
+}
+.boton-coral:active {
+  box-shadow: 0 1px 0 var(--color-mona-lisa-sombra);
+}
+
+.boton-naranja {
+  background-color: var(--color-rosa-texas);
+  box-shadow: 0 5px 0 var(--color-rosa-texas-sombra);
+}
+.boton-naranja:active {
+  box-shadow: 0 1px 0 var(--color-rosa-texas-sombra);
+}
+
+.boton-cielo {
+  background-color: var(--color-cielo-verano);
+  box-shadow: 0 5px 0 var(--color-cielo-verano-sombra);
+}
+.boton-cielo:active {
+  box-shadow: 0 1px 0 var(--color-cielo-verano-sombra);
+}
+
+.boton-amatista {
+  background-color: var(--color-amatista);
+  box-shadow: 0 5px 0 var(--color-amatista-sombra);
+}
+.boton-amatista:active {
+  box-shadow: 0 1px 0 var(--color-amatista-sombra);
+}
+
+.boton-turquesa {
+  background-color: var(--color-turquesa-suave);
+  box-shadow: 0 5px 0 var(--color-turquesa-suave-sombra);
+}
+.boton-turquesa:active {
+  box-shadow: 0 1px 0 var(--color-turquesa-suave-sombra);
+}
+
+/* ========================================================
+   FICHAS DE JUEGO Y TARJETAS SELECCIONABLES (UI ELEMENTS)
+   ======================================================== */
+.ficha-elemento {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ficha-elemento:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-turquesa-suave);
+  box-shadow: 0 6px 14px rgba(110, 209, 207, 0.2);
+}
+
+.ficha-elemento.seleccionada {
+  border: 3px solid var(--color-cielo-verano);
+  box-shadow: 0 0 0 3px rgba(31, 167, 225, 0.2);
+}
+
+/* Pestaña o etiqueta inferior de las fichas */
+.etiqueta-ficha {
+  width: 100%;
+  padding: 6px;
+  text-align: center;
+  font-weight: var(--peso-extra-negrita);
+  font-size: 0.85rem;
+  border-radius: 0 0 12px 12px;
+  margin-top: 8px;
+}
+
+/* ========================================================
+   ANIMACIONES DE LA MASCOTA SCRAPERT
+   ======================================================== */
+@keyframes flotacionGatito {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes saltoCelebracion {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-16px) scale(1.04); }
+}
+
+@keyframes balanceoSuave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-4deg); }
+  75% { transform: rotate(4deg); }
+}
+
+.animacion-reposo { animation: flotacionGatito 3.2s ease-in-out infinite; }
+.animacion-feliz { animation: saltoCelebracion 0.55s ease-in-out infinite; }
+.animacion-triste { animation: balanceoSuave 0.9s ease-in-out infinite; }
+
+/* ========================================================
+   MICRO-ANIMACIONES AVANZADAS DE SCRAPERT
+   ======================================================== */
+@keyframes baileGatito {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-8px) rotate(-6deg); }
+  75% { transform: translateY(-8px) rotate(6deg); }
+}
+
+@keyframes celebracionFiesta {
+  0%, 100% { transform: translateY(0) scale(1); }
+  30% { transform: translateY(-22px) scale(1.1) rotate(-4deg); }
+  60% { transform: translateY(-22px) scale(1.1) rotate(4deg); }
+}
+
+@keyframes sacudidaSorpresa {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08) translateY(-4px); }
+}
+
+@keyframes moverOreja {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-8deg); }
+}
+
+.animacion-baile { animation: baileGatito 0.8s ease-in-out infinite; }
+.animacion-celebracion { animation: celebracionFiesta 0.65s ease-in-out infinite; }
+.animacion-sorpresa { animation: sacudidaSorpresa 0.4s ease-in-out infinite; }
+
+/* ========================================================
+   TARJETAS DE MEMORIA VOLTEABLES EN 3D (RENOVADAS)
+   ======================================================== */
+.contenedor-carta-memoria {
+  perspective: 1000px;
+  cursor: pointer;
+  aspect-ratio: 1;
+  width: 100%;
+}
+
+.carta-giratoria {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 20px;
+}
+
+.carta-giratoria.volteada {
+  transform: rotateY(180deg);
+}
+
+.cara-carta {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+/* Dorso (Boca abajo): Azul Pizarra con relieve 3D bien contrastado */
+.cara-dorso {
+  background: var(--color-azul-pizarra);
+  border: 3.5px solid #FFFFFF;
+  box-shadow: 0 6px 0 var(--color-azul-pizarra-sombra), 0 8px 15px rgba(114, 116, 237, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.contenedor-carta-memoria:hover .cara-dorso {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 0 var(--color-azul-pizarra-sombra), 0 12px 20px rgba(114, 116, 237, 0.35);
+}
+
+/* Frente (Descubierta): Fondo blanco impecable con borde celeste */
+.cara-frente {
+  transform: rotateY(180deg);
+  background: #FFFFFF;
+  border: 3.5px solid var(--color-cielo-verano);
+  box-shadow: 0 6px 0 var(--color-cielo-verano-sombra);
+}
+
+/* Pareja encontrada con éxito */
+.carta-acertada .cara-frente {
+  border-color: var(--color-verde-pastel) !important;
+  box-shadow: 0 6px 0 var(--color-verde-pastel-sombra) !important;
+  background-color: #F0FDF4 !important;
+  animation: saltitoFeliz 0.45s ease;
+}
