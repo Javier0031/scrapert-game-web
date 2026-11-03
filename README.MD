@@ -12,7 +12,7 @@ El proyecto ha sido desplegado exitosamente en internet utilizando infraestructu
 
 ---
 
-## Enlaces de Producción (Evaluación en Vivo)
+## Enlaces de Producción
 
 El proyecto se encuentra 100% funcional en la nube. Puede ser evaluado directamente desde cualquier navegador web sin necesidad de configuración local a través del siguiente enlace:
 
